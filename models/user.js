@@ -10,23 +10,60 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      User.hasMany(models.Post,{
+        foreignKey:'userId',
+      })
+      User.hasMany(models.Comment,{
+        foreignKey:'userId',
+        as: 'owner'
+      })
     }
   }
   User.init({
-    username: DataTypes.STRING,
-    fullName: DataTypes.STRING,
-    email: DataTypes.STRING,
-    passwordDigest: DataTypes.STRING,
-    age: DataTypes.INTEGER,
-    DOB: DataTypes.DATE,
-    city: DataTypes.STRING,
-    state: DataTypes.STRING,
-    country: DataTypes.STRING,
-    bio: DataTypes.STRING
+    username: {
+      allowNull:false,
+      type:DataTypes.STRING
+    },
+    fullName: {
+      allowNull:false,
+      type:DataTypes.STRING
+    },
+    email: {
+      allowNull:false,
+      type:DataTypes.STRING
+    },
+    passwordDigest: {
+      allowNull:false,
+      type:DataTypes.STRING
+    },
+    age: {
+      allowNull:false,
+      type:DataTypes.INTEGER
+    },
+    DOB: {
+      allowNull:false,
+      type:DataTypes.DATE
+    },
+    city: {
+     
+      type:DataTypes.STRING
+    },
+    state: {
+     
+      type:DataTypes.STRING
+    },
+    country: {
+    
+      type:DataTypes.STRING
+    },
+    bio: {
+  
+      type:DataTypes.TEXT
+    }
   }, {
     sequelize,
     modelName: 'User',
+    tableName: 'users'
   });
   return User;
 };
