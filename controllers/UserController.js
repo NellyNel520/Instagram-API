@@ -41,6 +41,8 @@ const GetUserByUsername = async (req, res) => {
   }
 }
 
+
+// only need in auth controller *move*
 const CreateUser = async (req, res) => {
   try {
     let userBody = {
