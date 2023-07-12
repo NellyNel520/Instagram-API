@@ -6,7 +6,7 @@ module.exports = {
       id: {
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
+        primaryKey: true, 
         type: Sequelize.INTEGER
       },
       userId: {
@@ -20,10 +20,6 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       image: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
-      userName: {
         allowNull: false,
         type: Sequelize.STRING
       },

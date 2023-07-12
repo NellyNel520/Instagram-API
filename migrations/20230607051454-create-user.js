@@ -33,16 +33,23 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
+      profilePic: {
+        type:DataTypes.STRING,
+      },
       city: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       state: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       country: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       bio: {
+        allowNull: true,
         type: Sequelize.TEXT
       },
       createdAt: {

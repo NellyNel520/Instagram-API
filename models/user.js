@@ -49,19 +49,19 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     city: {
-     
+      allowNull: true,
       type:DataTypes.STRING
     },
     state: {
-     
+      allowNull: true,
       type:DataTypes.STRING
     },
     country: {
-    
+      allowNull: true,
       type:DataTypes.STRING
     },
     bio: {
-  
+      allowNull: true,
       type:DataTypes.TEXT
     }
   }, {
