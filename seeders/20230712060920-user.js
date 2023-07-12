@@ -8,27 +8,25 @@ const users = [...Array(50)].map(() => ({
   fullName: falso.randFullName(),
   email: falso.randEmail(),
   passwordDigest: falso.randPassword(),
+  age: falso.randNumber({ min: 15, max: 110 }),
+  DOB: (falso.randMonth({ abbreviation: true }), falso.randNumber({ min: 1, max: 31 })),
+  profilePic: falso.randImg(), 
+  city: falso.randCity(),
+  state: falso.randState(),
+  country: 'United States',
+  bio: falso.randQuote(),
+  createdAt: new Date(),
+  updatedAt: new Date()
+
 }))
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+    return queryInterface.bulkInsert('users', users)
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    
+    return queryInterface.bulkDelete('users')
   }
 };
