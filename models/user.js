@@ -1,5 +1,5 @@
 'use strict';
-const {
+const { 
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
@@ -43,6 +43,10 @@ module.exports = (sequelize, DataTypes) => {
     DOB: {
       allowNull:false,
       type:DataTypes.DATE
+    },
+    profilePic:{
+      type:DataTypes.STRING,
+      allowNull: true
     },
     city: {
      
