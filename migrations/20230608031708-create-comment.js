@@ -1,5 +1,5 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
+/** @type {import('sequelize-cli').Migration} */ 
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('comments', {
@@ -8,10 +8,6 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
-      },
-      userName: {
-        allowNull: false,
-        type: Sequelize.STRING
       },
       content: {
         allowNull: false,

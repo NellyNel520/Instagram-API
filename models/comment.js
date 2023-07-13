@@ -19,9 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Comment.init({
-    userName: {
-      allowNull: false,
-      type:DataTypes.STRING},
     content: {
       allowNull: false,
       type:DataTypes.STRING},
