@@ -1,5 +1,4 @@
 'use strict';
-
 /** @type {import('sequelize-cli').Migration} */
 
 const falso = require('@ngneat/falso')
@@ -14,18 +13,18 @@ const users = [...Array(50)].map(() => ({
   city: falso.randCity(),
   state: falso.randState(),
   country: 'United States',
-  bio: falso.randQuote(),
+  bio: falso.randPhrase(),
   createdAt: new Date(),
   updatedAt: new Date()
 
 }))
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('users', users)
   },
 
-  async down (queryInterface, Sequelize) {
+  down: async (queryInterface, Sequelize) => {
     
     return queryInterface.bulkDelete('users')
   }
